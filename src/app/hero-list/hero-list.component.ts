@@ -26,7 +26,7 @@ export class HeroListComponent implements OnInit {
   heroesDataSource = new HeroDataSource(this.heroesSubject);
 
   /** 当前页码 */
-  pageIdx = 1;
+  pageIdx = 0;
 
   /** 当前每页记录数 */
   pageSize = 10;
@@ -52,7 +52,7 @@ export class HeroListComponent implements OnInit {
     let pageSize = pageEvent.pageSize;
 
     if (pageSize !== this.pageSize) {
-      pageIndex = 1;
+      pageIndex = 0;
     }
 
     this.pageIdx = pageIndex;
@@ -62,7 +62,7 @@ export class HeroListComponent implements OnInit {
   }
 
   fetchDataByPageIndexAndPageSize(pageIndex: number, pageSize: number): Observable<HeroQueryResult> {
-    const offset = (pageIndex - 1) * pageSize;
+    const offset = pageIndex * pageSize;
     const limit = pageSize;
     return this.heroDataSerivce.getHeroes({offset, limit});
   }
