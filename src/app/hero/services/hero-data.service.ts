@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HeroQueryParameter, HeroQueryResult } from './interfaces';
+import { HeroQueryParameter, HeroQueryResult } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'

@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { HeroDataService } from './hero-data.service';
-import { Hero, HeroQueryParameter, HeroQueryResult } from './interfaces';
+import { Hero, HeroQueryParameter, HeroQueryResult } from '../interfaces';
 import * as faker from 'faker';
+import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class MockHeroDataService implements HeroDataService {
-
-  constructor() { }
+export class MockHeroDataService {
+  constructor() {}
 
   getHeroes(parameter: HeroQueryParameter): Observable<HeroQueryResult> {
     const offset = parameter.offset;

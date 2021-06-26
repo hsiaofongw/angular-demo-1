@@ -1,11 +1,11 @@
-import { Inject, Injectable } from '@angular/core';
-import { API_CONFIG } from './config';
-import { APIConfig } from './interfaces';
+import { Injectable, Inject } from '@angular/core';
+import { API_CONFIG } from '../config';
+import { APIConfig } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
-export class APIConfigService {
+export class APIPathConfigService {
 
   constructor(
     @Inject(API_CONFIG) private apiConfig: APIConfig,
@@ -21,4 +21,5 @@ export class APIConfigService {
 
     return `${baseURL}${apiPath}`;
   }
+
 }

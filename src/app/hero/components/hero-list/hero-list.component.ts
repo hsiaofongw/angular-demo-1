@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { HeroDataSource } from '../hero-data-source';
-import { HeroDataService } from '../hero-data.service';
-import { Hero, HeroQueryResult } from '../interfaces';
-import { HEROES } from '../mock-heroes';
+import { HeroDataSource } from '../../hero-data-source';
+import { HeroDataService } from '../../services/hero-data.service';
+import { Hero, HeroQueryResult } from '../../interfaces';
+import { HEROES } from '../../mock-heroes';
 
 @Component({
   selector: 'app-hero-list',
   templateUrl: './hero-list.component.html',
-  styleUrls: ['./hero-list.component.css']
+  styleUrls: ['./hero-list.component.css'],
 })
 export class HeroListComponent implements OnInit {
-
   /** 要显示的列的列表 */
   displayedColumns = ['id', 'name'];
 
@@ -37,14 +36,14 @@ export class HeroListComponent implements OnInit {
   /** 每页长度选项列表 */
   pageSizeOptions = [5, 10, 15, 25, 50, 100];
 
-  constructor(
-    private heroDataSerivce: HeroDataService,
-  ) { }
+  constructor(private heroDataSerivce: HeroDataService) {}
 
   ngOnInit(): void {
-    this.fetchDataByPageIndexAndPageSize(this.pageIdx, this.pageSize).subscribe(queryResult => {
-      this.load(queryResult);
-    });
+    this.fetchDataByPageIndexAndPageSize(this.pageIdx, this.pageSize).subscribe(
+      (queryResult) => {
+        this.load(queryResult);
+      }
+    );
   }
 
   handlePageEvent(pageEvent: PageEvent): void {
@@ -58,18 +57,22 @@ export class HeroListComponent implements OnInit {
     this.pageIdx = pageIndex;
     this.pageSize = pageSize;
 
-    this.fetchDataByPageIndexAndPageSize(pageIndex, pageSize).subscribe(queryResult => this.load(queryResult));
+    this.fetchDataByPageIndexAndPageSize(pageIndex, pageSize).subscribe(
+      (queryResult) => this.load(queryResult)
+    );
   }
 
-  fetchDataByPageIndexAndPageSize(pageIndex: number, pageSize: number): Observable<HeroQueryResult> {
+  fetchDataByPageIndexAndPageSize(
+    pageIndex: number,
+    pageSize: number
+  ): Observable<HeroQueryResult> {
     const offset = pageIndex * pageSize;
     const limit = pageSize;
-    return this.heroDataSerivce.getHeroes({offset, limit});
+    return this.heroDataSerivce.getHeroes({ offset, limit });
   }
 
   load(queryResult: HeroQueryResult): void {
     this.totalCounts = queryResult.totalCounts;
     this.heroesSubject.next(queryResult.heroes);
   }
-
 }

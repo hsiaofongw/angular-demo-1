@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { APIConfigService } from './api-config.service';
+import { HeroDataService } from './hero-data.service';
 
-describe('ApiConfigService', () => {
-  let service: APIConfigService;
+describe('HeroDataService', () => {
+  let service: HeroDataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(APIConfigService);
+    service = TestBed.inject(HeroDataService);
   });
 
   it('should be created', () => {
