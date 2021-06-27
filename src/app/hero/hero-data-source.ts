@@ -24,5 +24,4 @@ export class HeroDataSource implements DataSource<Hero> {
     this.heroesSubject.unsubscribe();
   }
 
-
 }

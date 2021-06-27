@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ReviewingCommentModule } from '../../reviewing-comment.module';
 
 import { ReviewingCommentsComponent } from './reviewing-comments.component';
 
@@ -8,6 +10,7 @@ describe('ReviewingCommentsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ReviewingCommentModule,MatDialogModule,],
       declarations: [ ReviewingCommentsComponent ]
     })
     .compileComponents();

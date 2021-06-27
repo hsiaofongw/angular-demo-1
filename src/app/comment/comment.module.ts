@@ -4,7 +4,7 @@ import { CommentReviewCardModule } from './shared/comment-review-card/comment-re
 import { CommentRoutingModule } from './comment-routing.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CommentComponent } from './components/comment/comment.component';
-import { ReviewingCommentModule } from './reviewing-comment/reviewing-comment.module';
+import { ReviewingCommentModule } from './sub-modules/reviewing-comment/reviewing-comment.module';
 import { ViewCommentDetailComponent } from './components/view-comment-detail/view-comment-detail.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';

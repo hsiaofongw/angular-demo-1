@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { HeroModule } from '../hero.module';
 
 import { HttpAPIBackendConfigService } from './api-backend-config.service';
 
@@ -6,7 +7,9 @@ describe('ApiBackendConfigService', () => {
   let service: HttpAPIBackendConfigService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [HeroModule],
+    });
     service = TestBed.inject(HttpAPIBackendConfigService);
   });
 

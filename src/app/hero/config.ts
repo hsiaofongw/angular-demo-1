@@ -17,12 +17,12 @@ export const PROD_HTTP_API_PATH_CONFIG: HTTPAPIPathConfig = {
 };
 
 /** 选择使用哪一个后端 */
-export const BACKEND_CONFIG: SupportedBackEndType = 'http';
-// export const USING_BACKEND: SupportedBackEndType = 'mock';
+// export const BACKEND_CONFIG: SupportedBackEndType = 'http';
+export const BACKEND_CONFIG: SupportedBackEndType = 'mock';
 
 /** 当使用 HTTP 协议与后端通信时，选择连接到哪一个服务器上 */
 export const HTTP_API_ENDPOINT_CONFIG: SupportedHTTPAPIEndPointType = 'dev';
-// export const USING_API_ENDPOINT: SupportedHTTPAPIEndPointType = 'prod';
+// export const HTTP_API_ENDPOINT_CONFIG: SupportedHTTPAPIEndPointType = 'prod';
 
 /** 配置是否截获 Http API 请求进行研究 */
 // export const SHOULD_INTERCEPT_HERO_HTTP_REQUEST: HTTPInterceptOption = 'intercept';
