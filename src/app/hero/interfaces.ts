@@ -29,3 +29,5 @@ export type SupportedBackEndType = 'http' | 'mock';
 /** 支持的 HTTP API 端点配置 */
 export type SupportedHTTPAPIEndPointType = 'dev' | 'prod';
 
+/** HTTP 截获配置 */
+export type HTTPInterceptOption = 'intercept' | 'bypass';

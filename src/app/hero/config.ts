@@ -1,5 +1,5 @@
 import { InjectionToken } from '@angular/core';
-import { HTTPAPIPathConfig, SupportedBackEndType, SupportedHTTPAPIEndPointType } from './interfaces';
+import { HTTPAPIPathConfig, HTTPInterceptOption, SupportedBackEndType, SupportedHTTPAPIEndPointType } from './interfaces';
 
 /** 抽象 API 路径配置对象，由基于 Http 协议的英雄数据服务依赖，由直属 Module 提供实现 */
 export const HTTP_API_PATH_CONFIG = new InjectionToken<HTTPAPIPathConfig>('API Path Configuration');
@@ -25,3 +25,7 @@ export const USING_BACKEND: SupportedBackEndType = 'http';
 export const HTTP_API_ENDPOINT_CONFIG = new InjectionToken<SupportedHTTPAPIEndPointType>('Choose which api endpoint to use');
 export const USING_API_ENDPOINT: SupportedHTTPAPIEndPointType = 'dev';
 // export const USING_API_ENDPOINT: SupportedHTTPAPIEndPointType = 'prod';
+
+/** 配置是否截获 Http API 请求进行研究 */
+export const SHOULD_INTERCEPT_HERO_HTTP_REQUEST: HTTPInterceptOption = 'intercept';
+// export const SHOULD_INTERCEPT_HERO_HTTP_REQUEST: HTTPInterceptOption = 'bypass';

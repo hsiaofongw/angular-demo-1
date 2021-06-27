@@ -23,4 +23,12 @@ export class HTTPAPIPathConfigService {
     return `${baseURL}${apiPath}`;
   }
 
+  /**
+   * 获取 API 短的路径（去掉协议，IP 地址和端口部分）
+   * @return {string} API 路径
+   */
+  getAPIShortPath(): string {
+    return this.apiConfig.apiPath;
+  }
+
 }

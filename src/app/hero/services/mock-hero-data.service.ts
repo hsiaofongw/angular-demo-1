@@ -9,9 +9,7 @@ import { of } from 'rxjs';
   providedIn: 'root',
 })
 export class MockHeroDataService {
-  constructor() {
-    window.console.log('当前使用 Mock 后端');
-  }
+  constructor() {}
 
   /**
    * 根据 HeroQueryParameter 参数产生符合要求的 Mock 的英雄数据列表
