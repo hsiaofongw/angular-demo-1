@@ -1,5 +1,6 @@
 import { Hero } from "./interfaces";
 
+/** 静态的 Mock 英雄数据 */
 export const HEROES: Hero[] = [
   { id: 11, name: 'Dr Nice' },
   { id: 12, name: 'Narco' },
