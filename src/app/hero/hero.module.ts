@@ -9,10 +9,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HeroComponent } from './components/hero/hero.component';
 import { HeroRoutingModule } from './hero-routing.module';
-import { APIPathConfigService } from './services/api-path-config.service';
+import { HTTPAPIPathConfigService } from './services/api-path-config.service';
 import { heroDataServiceFactory } from './factories/hero-data-service-factory';
 import { BackendConfigService } from './services/backend-config.service';
-import { httpAPIPathConfigFactory } from './factories/http-api-path-config-factory';
+import { httpAPIBackendConfigFactory } from './factories/http-api-backend-config-factory';
 import { HttpAPIBackendConfigService } from './services/api-backend-config.service';
 
 
@@ -29,7 +29,7 @@ import { HttpAPIBackendConfigService } from './services/api-backend-config.servi
   providers: [
     {
       provide: HTTP_API_PATH_CONFIG,
-      useFactory: httpAPIPathConfigFactory,
+      useFactory: httpAPIBackendConfigFactory,
       deps: [HttpAPIBackendConfigService],
     },
     HttpAPIBackendConfigService,
@@ -39,10 +39,10 @@ import { HttpAPIBackendConfigService } from './services/api-backend-config.servi
       deps: [
         BackendConfigService,
         HttpClient,
-        APIPathConfigService,
+        HTTPAPIPathConfigService,
       ]
     },
-    APIPathConfigService,
+    HTTPAPIPathConfigService,
     BackendConfigService,
     { provide: BACKEND_CONFIG, useValue: USING_BACKEND, },
     { provide: USING_BACKEND, useValue: USING_BACKEND, },

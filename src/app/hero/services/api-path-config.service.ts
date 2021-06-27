@@ -6,7 +6,7 @@ import { HTTPAPIPathConfig } from '../interfaces';
 @Injectable({
   providedIn: 'root'
 })
-export class APIPathConfigService {
+export class HTTPAPIPathConfigService {
 
   constructor(
     @Inject(HTTP_API_PATH_CONFIG) private apiConfig: HTTPAPIPathConfig,

@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HeroQueryParameter, HeroQueryResult } from '../interfaces';
-import { APIPathConfigService } from './api-path-config.service';
+import { HTTPAPIPathConfigService } from './api-path-config.service';
 import { HeroDataService } from './hero-data.service';
 import { catchError, map } from 'rxjs/operators';
 
@@ -41,7 +41,7 @@ type ServerHeroQueryReturn = {
 export class HttpHeroDataService implements HeroDataService {
 
   constructor(
-    private apiPathConfigService: APIPathConfigService,
+    private apiPathConfigService: HTTPAPIPathConfigService,
     private httpClient: HttpClient,
   ) {
     window.console.log('当前使用 http 后端');

@@ -7,7 +7,7 @@ import { HTTPAPIPathConfig } from "../interfaces";
  * @param httpAPIBackendConfigService - 当前 HTTP API 后端配置
  * @returns {HTTPAPIPathConfig} 一组 HTTP API 后端连接参数
  */
-export const httpAPIPathConfigFactory = (
+export const httpAPIBackendConfigFactory = (
   httpAPIBackendConfigService: HttpAPIBackendConfigService,
 ): HTTPAPIPathConfig => {
   const currentUsingAPIBackendConfig = httpAPIBackendConfigService.getCurrentUsingAPIBackendConfig();

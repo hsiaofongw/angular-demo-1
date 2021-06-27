@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { APIPathConfigService } from './api-path-config.service';
+import { HTTPAPIPathConfigService } from './api-path-config.service';
 
 describe('ApiPathConfigService', () => {
-  let service: APIPathConfigService;
+  let service: HTTPAPIPathConfigService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(APIPathConfigService);
+    service = TestBed.inject(HTTPAPIPathConfigService);
   });
 
   it('should be created', () => {
