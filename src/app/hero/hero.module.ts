@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HeroListComponent } from './components/hero-list/hero-list.component';
 import { API_CONFIG, BACKEND_CONFIG, DEV_API_CONFIG, USING_BACKEND } from './config';
 import { HeroDataService } from './services/hero-data.service';
-import { MockHeroDataService } from './services/mock-hero-data.service';
 import { MatTableModule } from '@angular/material/table';
 import { CdkTableModule } from '@angular/cdk/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
