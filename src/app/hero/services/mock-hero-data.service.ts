@@ -4,12 +4,18 @@ import * as faker from 'faker';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
+/** 此服务负责产生 Mock 的英雄数据列表 */
 @Injectable({
   providedIn: 'root',
 })
 export class MockHeroDataService {
   constructor() {}
 
+  /**
+   * 根据 HeroQueryParameter 参数产生符合要求的 Mock 的英雄数据列表
+   * @param {HeroQueryParameter} parameter - 分页参数
+   * @returns {Observable<HeroQueryResult>} 英雄列表查询结果
+   */
   getHeroes(parameter: HeroQueryParameter): Observable<HeroQueryResult> {
     const offset = parameter.offset;
     const limit = parameter.limit;

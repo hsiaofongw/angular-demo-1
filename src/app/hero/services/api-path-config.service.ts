@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { API_CONFIG } from '../config';
 import { APIConfig } from '../interfaces';
 
+/** 此服务负责从 API 配置对象中生成完整的 API 路径 */
 @Injectable({
   providedIn: 'root'
 })
