@@ -1,13 +1,20 @@
 <mat-card class="card-with-max-width">
   <div class="card-first-row">
     <mat-card-title class="card-title">张三</mat-card-title>
+
+
     <button
-      (click)="handleOpenDetail()"
-      matTooltip="查看详情"
-      mat-icon-button aria-label="Example icon button with a vertical three dot icon"
-    >
-      <mat-icon>more_vert</mat-icon>
-    </button>
+  mat-icon-button
+  [matMenuTriggerFor]="menu"
+  matTooltip="更多"
+><mat-icon>more_vert</mat-icon></button>
+
+<!-- #enddocregion mat-menu-trigger-for -->
+<mat-menu #menu="matMenu">
+  <button (click)="handleOpenDetail()" mat-menu-item>查看详情</button>
+</mat-menu>
+
+
   </div>
 
   <mat-card-subtitle class="flex-row column-gap-8px align-center">
