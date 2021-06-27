@@ -27,5 +27,5 @@ export const USING_API_ENDPOINT: SupportedHTTPAPIEndPointType = 'dev';
 // export const USING_API_ENDPOINT: SupportedHTTPAPIEndPointType = 'prod';
 
 /** 配置是否截获 Http API 请求进行研究 */
-export const SHOULD_INTERCEPT_HERO_HTTP_REQUEST: HTTPInterceptOption = 'intercept';
-// export const SHOULD_INTERCEPT_HERO_HTTP_REQUEST: HTTPInterceptOption = 'bypass';
+// export const SHOULD_INTERCEPT_HERO_HTTP_REQUEST: HTTPInterceptOption = 'intercept';
+export const SHOULD_INTERCEPT_HERO_HTTP_REQUEST: HTTPInterceptOption = 'bypass';
