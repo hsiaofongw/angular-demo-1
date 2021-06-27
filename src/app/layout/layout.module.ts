@@ -8,7 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 
-
+/** 此 Module 负责导出一个实现全局 Layout 的组件 */
 @NgModule({
   declarations: [LayoutComponent],
   imports: [
