@@ -22,3 +22,6 @@ export type APIConfig = {
   baseURL: string;
   apiPath: string;
 };
+
+/** 支持的后端类型 */
+export type SupportedBackEndType = 'http' | 'mock';

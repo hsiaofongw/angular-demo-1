@@ -43,7 +43,9 @@ export class HttpHeroDataService implements HeroDataService {
   constructor(
     private apiPathConfigService: APIPathConfigService,
     private httpClient: HttpClient,
-  ) { }
+  ) {
+    window.console.log('当前使用 http 后端');
+  }
 
   /**
    * 以 HTTP 协议向后端请求英雄列表数据，接受分页参数
