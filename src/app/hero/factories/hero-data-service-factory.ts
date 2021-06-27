@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { HTTPAPIPathConfigService } from '../services/api-path-config.service';
+import { HTTPAPIPathConfigService } from '../services/http-api-path-config.service';
 import { BackendConfigService } from '../services/backend-config.service';
 import { HeroDataService } from '../services/hero-data.service';
 import { HttpHeroDataService } from '../services/http-hero-data.service';

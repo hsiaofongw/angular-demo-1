@@ -7,7 +7,7 @@ import {
   HttpResponse
 } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { HTTPAPIPathConfigService } from '../services/api-path-config.service';
+import { HTTPAPIPathConfigService } from '../services/http-api-path-config.service';
 import { SHOULD_INTERCEPT_HERO_HTTP_REQUEST } from '../config';
 import { Hero, HTTPInterceptOption } from '../interfaces';
 

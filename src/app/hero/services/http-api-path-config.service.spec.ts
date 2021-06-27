@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HTTPAPIPathConfigService } from './api-path-config.service';
+import { HTTPAPIPathConfigService } from './http-api-path-config.service';
 
 describe('ApiPathConfigService', () => {
   let service: HTTPAPIPathConfigService;

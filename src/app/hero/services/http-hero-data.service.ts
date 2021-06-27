@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HeroQueryParameter, HeroQueryResult } from '../interfaces';
-import { HTTPAPIPathConfigService } from './api-path-config.service';
+import { HTTPAPIPathConfigService } from './http-api-path-config.service';
 import { HeroDataService } from './hero-data.service';
 import { catchError, map } from 'rxjs/operators';
 
