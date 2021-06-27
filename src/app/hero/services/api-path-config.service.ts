@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
-import { API_CONFIG } from '../config';
-import { APIConfig } from '../interfaces';
+import { HTTP_API_PATH_CONFIG } from '../config';
+import { HTTPAPIPathConfig } from '../interfaces';
 
 /** 此服务负责从 API 配置对象中生成完整的 API 路径 */
 @Injectable({
@@ -9,7 +9,7 @@ import { APIConfig } from '../interfaces';
 export class APIPathConfigService {
 
   constructor(
-    @Inject(API_CONFIG) private apiConfig: APIConfig,
+    @Inject(HTTP_API_PATH_CONFIG) private apiConfig: HTTPAPIPathConfig,
   ) { }
 
   /**

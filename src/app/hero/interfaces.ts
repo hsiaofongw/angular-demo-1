@@ -18,10 +18,14 @@ export type HeroQueryResult = {
 };
 
 /** API 配置类型 */
-export type APIConfig = {
+export type HTTPAPIPathConfig = {
   baseURL: string;
   apiPath: string;
 };
 
 /** 支持的后端类型 */
 export type SupportedBackEndType = 'http' | 'mock';
+
+/** 支持的 HTTP API 端点配置 */
+export type SupportedHTTPAPIEndPointType = 'dev' | 'prod';
+
