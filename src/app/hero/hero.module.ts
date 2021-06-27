@@ -10,6 +10,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import { HeroComponent } from './components/hero/hero.component';
 import { HeroRoutingModule } from './hero-routing.module';
+import { HttpHeroDataService } from './services/http-hero-data.service';
+import { APIPathConfigService } from './services/api-path-config.service';
+
 
 @NgModule({
   declarations: [HeroListComponent, HeroComponent],
@@ -24,7 +27,9 @@ import { HeroRoutingModule } from './hero-routing.module';
   providers: [
     { provide: API_CONFIG, useValue: DEV_API_CONFIG },
     { provide: DEV_API_CONFIG, useValue: DEV_API_CONFIG },
-    { provide: HeroDataService, useClass: MockHeroDataService },
+    // { provide: HeroDataService, useClass: MockHeroDataService, },
+    { provide: HeroDataService, useClass: HttpHeroDataService, },
+    APIPathConfigService,
   ],
 })
 export class HeroModule {}

@@ -15,7 +15,6 @@ export class HeroDataSource implements DataSource<Hero> {
   connect(_: CollectionViewer): Observable<readonly Hero[]> {
     return new Observable(observer => {
       this.heroesSubject.subscribe(heroes => {
-        window.console.log(heroes);
         observer.next(heroes);
       });
     });

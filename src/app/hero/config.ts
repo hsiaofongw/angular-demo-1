@@ -6,6 +6,6 @@ export const API_CONFIG = new InjectionToken<APIConfig>('API Path Configuration'
 
 /** API 路径配置的实现，由直属 Module 提供给 API_CONFIG Token */
 export const DEV_API_CONFIG: APIConfig = {
-  baseURL: 'https://backend-1.example.com',
+  baseURL: 'http://localhost:3000',
   apiPath: '/api/v1/hero',
 };
