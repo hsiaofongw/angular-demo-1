@@ -4,7 +4,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { HeroDataSource } from '../../hero-data-source';
 import { HeroDataService } from '../../services/hero-data.service';
 import { Hero, HeroQueryResult } from '../../interfaces';
-import { HEROES } from '../../mock-heroes';
 
 @Component({
   selector: 'app-hero-list',
@@ -16,7 +15,7 @@ export class HeroListComponent implements OnInit {
   displayedColumns = ['id', 'name'];
 
   /** 初始英雄列表 */
-  initialHeroes: Hero[] = HEROES;
+  initialHeroes: Hero[] = [];
 
   /** 英雄列表 */
   heroesSubject = new BehaviorSubject<Hero[]>(this.initialHeroes);
