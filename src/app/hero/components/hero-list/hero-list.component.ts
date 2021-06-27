@@ -46,6 +46,10 @@ export class HeroListComponent implements OnInit {
     );
   }
 
+  /**
+   * 处理翻页事件，获取对应页的信息，当每页的长度改变时，跳到第一页
+   * @param {PageEvent} pageEvent - 翻页事件，包含页码和每页长度等信息
+   */
   handlePageEvent(pageEvent: PageEvent): void {
     let pageIndex = pageEvent.pageIndex;
     let pageSize = pageEvent.pageSize;
@@ -62,6 +66,12 @@ export class HeroListComponent implements OnInit {
     );
   }
 
+  /**
+   * 以一定的分页参数向后端请求并加载数据
+   * @param {number} pageIndex - 页码
+   * @param {number} pageSize - 每页长度
+   * @returns {Observable<HeroQueryResult>} 一个关于 Hero[] 查询结果的 Observable
+   */
   fetchDataByPageIndexAndPageSize(
     pageIndex: number,
     pageSize: number
