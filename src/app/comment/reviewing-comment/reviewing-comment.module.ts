@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReviewingCommentsComponent } from './components/reviewing-comments/reviewing-comments.component';
-import { ReviewingCommentRoutingModule } from './reviewing-comment-routing.module';
 import { CommentReviewCardModule } from '../shared/comment-review-card/comment-review-card.module';
 
 
@@ -12,8 +11,8 @@ import { CommentReviewCardModule } from '../shared/comment-review-card/comment-r
   ],
   imports: [
     CommonModule,
-    ReviewingCommentRoutingModule,
     CommentReviewCardModule,
-  ]
+  ],
+  exports: [ReviewingCommentsComponent],
 })
 export class ReviewingCommentModule { }

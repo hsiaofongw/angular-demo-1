@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CommentComponent } from './components/comment/comment.component';
 
 const routes: Routes = [
   {
-    path: 'reviewing-comments',
-    loadChildren: () =>
-      import('./reviewing-comment/reviewing-comment.module').then(
-        (m) => m.ReviewingCommentModule
-      ),
-  },
+    path: '',
+    component: CommentComponent,
+  }
 ];
 
 @NgModule({

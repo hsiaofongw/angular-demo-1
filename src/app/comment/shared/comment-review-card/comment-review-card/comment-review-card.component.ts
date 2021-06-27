@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-comment-review-card',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentReviewCardComponent implements OnInit {
 
+  @Output()
+  onOpenDetailWindow = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  handleOpenDetail(): void {
+    this.onOpenDetailWindow.emit();
   }
 
 }

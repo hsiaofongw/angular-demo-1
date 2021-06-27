@@ -1,8 +1,27 @@
-
-
 <mat-toolbar color="primary">
+  <button
+    (click)="drawer.toggle()"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
   <span>Tour of Heroes</span>
 </mat-toolbar>
-<div class="content-area">
-  <router-outlet></router-outlet>
-</div>
+
+<mat-drawer-container class="drawer-container" [hasBackdrop]="false">
+  <mat-drawer #drawer [mode]="'side'">
+    <mat-nav-list>
+      <a class="nav-item" mat-list-item href="hero">英雄</a>
+      <a class="nav-item" mat-list-item href="comment">评论</a>
+      <a class="nav-item" mat-list-item href="comment">友链</a>
+   </mat-nav-list>
+  </mat-drawer>
+
+  <mat-drawer-content class="drawer-content">
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
