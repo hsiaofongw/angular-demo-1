@@ -3,8 +3,22 @@ import { IMenuItem } from "./interface";
 /** 菜单数据 */
 export const menuData: IMenuItem[] = [
   {
-    name: '文章列表',
+    name: '文章',
     path: 'articles',
+    children: [
+      {
+        name: '全部文章',
+        path: '',
+      },
+      {
+        name: 'PDF 文章',
+        path: 'pdf',
+      },
+      {
+        name: 'Markdown 文章',
+        path: 'markdown',
+      }
+    ]
   },
   {
     name: '友情链接',
