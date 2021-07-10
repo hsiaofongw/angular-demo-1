@@ -34,7 +34,6 @@ export class NavTreeComponent implements OnInit {
     if (this.menuData?.length && this.menuData.length >= 0) {
       this.attachTreeLevel(this.menuData, 0);
       this.attachFullPath(this.menuData, '');
-      window.console.log(this.menuData);
       this.dataSource  = new ArrayDataSource(this.menuData);
     }
   }
