@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MenuModule } from '../menu/menu.module';
+import { MetaDataModule } from '../meta-data/meta-data.module';
 
 /** 此 Module 负责导出一个实现全局 Layout 的组件 */
 @NgModule({
@@ -21,6 +22,7 @@ import { MenuModule } from '../menu/menu.module';
     MatSidenavModule,
     MatListModule,
     MenuModule,
+    MetaDataModule,
   ],
   exports: [LayoutComponent],
 })
