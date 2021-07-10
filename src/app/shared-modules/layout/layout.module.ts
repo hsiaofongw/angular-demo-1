@@ -9,10 +9,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MenuModule } from '../menu/menu.module';
 import { MetaDataModule } from '../meta-data/meta-data.module';
+import { NavTreeComponent } from './components/nav-tree/nav-tree.component';
+import { CdkTreeModule } from '@angular/cdk/tree';
 
 /** 此 Module 负责导出一个实现全局 Layout 的组件 */
 @NgModule({
-  declarations: [LayoutComponent],
+  declarations: [LayoutComponent, NavTreeComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -23,6 +25,7 @@ import { MetaDataModule } from '../meta-data/meta-data.module';
     MatListModule,
     MenuModule,
     MetaDataModule,
+    CdkTreeModule,
   ],
   exports: [LayoutComponent],
 })

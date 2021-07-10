@@ -1,0 +1,24 @@
+.tree-invisible {
+  display: none;
+}
+
+.example-tree-node {
+  display: block;
+}
+
+.has-subentry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entry {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;;
+  cursor: pointer;
+}
+
+.entry:hover {
+  background-color: rgb(203, 210, 216);
+}

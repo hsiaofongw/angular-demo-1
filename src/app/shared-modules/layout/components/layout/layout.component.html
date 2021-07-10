@@ -16,9 +16,10 @@
 </mat-toolbar>
 
 <mat-drawer-container class="drawer-container" [hasBackdrop]="false">
-  <mat-drawer #drawer [mode]="'side'" [opened]="true">
+  <mat-drawer class="sider" #drawer [mode]="'side'" [opened]="true">
     <mat-nav-list>
-      <a *ngFor="let menuItem of menuData" class="nav-item" mat-list-item [routerLink]="'/'+menuItem.path">{{ menuItem.name }}</a>
+      <!-- <a *ngFor="let menuItem of menuData" class="nav-item" mat-list-item [routerLink]="'/'+menuItem.path">{{ menuItem.name }}</a> -->
+      <app-nav-tree [menuData]="menuData"></app-nav-tree>
    </mat-nav-list>
   </mat-drawer>
 

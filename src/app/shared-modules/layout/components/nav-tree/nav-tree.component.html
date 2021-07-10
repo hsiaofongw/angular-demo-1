@@ -1,0 +1,35 @@
+<cdk-tree [dataSource]="dataSource" [treeControl]="treeControl">
+  <cdk-nested-tree-node *cdkTreeNodeDef="let node" class="example-tree-node">
+    <div
+      class="entry"
+      cdkTreeNodePadding
+      [cdkTreeNodePadding]="node.level + 1"
+      [cdkTreeNodePaddingIndent]="20"
+      [routerLink]="node.fullPath"
+    >
+      {{ node.name }}
+    </div>
+  </cdk-nested-tree-node>
+
+  <cdk-nested-tree-node
+    *cdkTreeNodeDef="let node; when: hasChild"
+    class="example-tree-node"
+  >
+    <div
+      cdkTreeNodePadding
+      [cdkTreeNodePadding]="node.level + 1"
+      [cdkTreeNodePaddingIndent]="20"
+      cdkTreeNodeToggle
+      class="entry has-subentry"
+    >
+      <div>{{ node.name }}</div>
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{ treeControl.isExpanded(node) ? "expand_more" : "chevron_right" }}
+      </mat-icon>
+    </div>
+
+    <div [class.tree-invisible]="!treeControl.isExpanded(node)">
+      <ng-container cdkTreeNodeOutlet></ng-container>
+    </div>
+  </cdk-nested-tree-node>
+</cdk-tree>

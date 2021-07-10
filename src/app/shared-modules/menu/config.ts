@@ -19,8 +19,22 @@ export const menuData: IMenuItem[] = [
     path: 'demos',
   },
   {
-    name: '关于自己',
+    name: '关于',
     path: 'about',
+    children: [
+      {
+        name: '自我介绍',
+        path: 'myself',
+      },
+      {
+        name: '此站点',
+        path: 'this-site',
+      },
+      {
+        name: '个人简历',
+        path: 'resume',
+      }
+    ]
   },
   {
     name: '个人动态',
