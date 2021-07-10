@@ -3,12 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'hero',
-    loadChildren: () => import('./hero/hero.module').then(m => m.HeroModule),
+    path: '', redirectTo: 'articles', pathMatch: 'full',
   },
   {
-    path: 'comment',
-    loadChildren: () => import('./comment/comment.module').then(m => m.CommentModule),
+    path: 'articles',
+    loadChildren: () => import('./article/article.module').then(m => m.ArticleModule),
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule),
   }
 ];
 
