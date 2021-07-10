@@ -1,7 +1,7 @@
 <app-layout>
 
   <div>
-    <article *ngFor="let article of articles">
+    <article class="article-excerpt" *ngFor="let article of articles">
       <a class="anchor" [href]="article.url"><h2 class="heading-2">{{ article.title }}</h2></a>
       <p>{{ article.date }}</p>
     </article>
