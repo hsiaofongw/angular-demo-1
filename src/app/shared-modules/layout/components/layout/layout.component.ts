@@ -4,6 +4,7 @@ import { IMenuItem } from 'src/app/shared-modules/menu/interface';
 import { MenuService } from 'src/app/shared-modules/menu/services/menu.service';
 import { IMetaData } from 'src/app/shared-modules/meta-data/interface';
 import { MetaDataService } from 'src/app/shared-modules/meta-data/services/meta-data.service';
+import { UserService } from 'src/app/shared-modules/user/services/user.service';
 
 /** 此组件负责全局 Layout */
 @Component({
@@ -13,6 +14,8 @@ import { MetaDataService } from 'src/app/shared-modules/meta-data/services/meta-
 })
 export class LayoutComponent implements OnInit {
 
+  loginState: boolean = false;
+
   menuData: IMenuItem[] = [];
 
   siteMetaData!: IMetaData;
@@ -21,15 +24,23 @@ export class LayoutComponent implements OnInit {
     private menuService: MenuService,
     private router: Router,
     private metaDataService: MetaDataService,
+    private userService: UserService,
   ) { }
 
   ngOnInit(): void {
     this.menuData = this.menuService.getMenuData();
     this.siteMetaData = this.metaDataService.getMetaData();
+    this.loginState = this.userService.isLogedIn();
   }
 
   login(): void {
     this.router.navigateByUrl('/login');
+    this.loginState = this.userService.isLogedIn();
+  }
+
+  logOut(): void {
+    this.userService.logOut();
+    this.loginState = this.userService.isLogedIn();
   }
 
 }

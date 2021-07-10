@@ -12,7 +12,7 @@
       <div>
         <span class="title">{{ siteMetaData.siteTitle }}</span>
       </div>
-      <button mat-button (click)="login()">登录</button>
+      <button mat-button (click)="loginState ? logOut() : login()">{{ loginState ? '登出' : '登录' }}</button>
     </div>
   </mat-toolbar>
 

@@ -35,4 +35,8 @@ export class UserService {
 
     return now < (expInToken * 1000);
   }
+
+  logOut(): void {
+    this.persistTokenObject({});
+  }
 }

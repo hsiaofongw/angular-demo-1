@@ -11,6 +11,7 @@ import { MenuModule } from '../menu/menu.module';
 import { MetaDataModule } from '../meta-data/meta-data.module';
 import { NavTreeComponent } from './components/nav-tree/nav-tree.component';
 import { CdkTreeModule } from '@angular/cdk/tree';
+import { UserModule } from '../user/user.module';
 
 /** 此 Module 负责导出一个实现全局 Layout 的组件 */
 @NgModule({
@@ -26,6 +27,7 @@ import { CdkTreeModule } from '@angular/cdk/tree';
     MenuModule,
     MetaDataModule,
     CdkTreeModule,
+    UserModule,
   ],
   exports: [LayoutComponent],
 })
