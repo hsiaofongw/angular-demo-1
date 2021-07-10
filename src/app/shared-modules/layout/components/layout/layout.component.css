@@ -32,3 +32,10 @@
   display: flex;
   justify-content: space-between;
 }
+
+.layout-container {
+  height: 100vh;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: minmax(min-content, auto) 1fr;
+}

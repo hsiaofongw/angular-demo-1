@@ -1,31 +1,33 @@
-<mat-toolbar color="primary">
-  <button
-    (click)="drawer.toggle()"
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
-  >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <div class="header">
-    <div>
-      <span class="title">{{ siteMetaData.siteTitle }}</span>
+<div class="layout-container">
+  <mat-toolbar color="primary">
+    <button
+      (click)="drawer.toggle()"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="header">
+      <div>
+        <span class="title">{{ siteMetaData.siteTitle }}</span>
+      </div>
+      <button mat-button (click)="login()">登录</button>
     </div>
-    <button mat-button (click)="login()">登录</button>
-  </div>
-</mat-toolbar>
+  </mat-toolbar>
 
-<mat-drawer-container class="drawer-container" [hasBackdrop]="false">
-  <mat-drawer class="sider" #drawer [mode]="'side'" [opened]="true">
-    <mat-nav-list>
-      <!-- <a *ngFor="let menuItem of menuData" class="nav-item" mat-list-item [routerLink]="'/'+menuItem.path">{{ menuItem.name }}</a> -->
-      <app-nav-tree [menuData]="menuData"></app-nav-tree>
-   </mat-nav-list>
-  </mat-drawer>
+  <mat-drawer-container class="drawer-container" [hasBackdrop]="false">
+    <mat-drawer class="sider" #drawer [mode]="'side'" [opened]="true">
+      <mat-nav-list>
+        <!-- <a *ngFor="let menuItem of menuData" class="nav-item" mat-list-item [routerLink]="'/'+menuItem.path">{{ menuItem.name }}</a> -->
+        <app-nav-tree [menuData]="menuData"></app-nav-tree>
+      </mat-nav-list>
+    </mat-drawer>
 
-  <mat-drawer-content class="drawer-content">
-    <div class="content-area">
-      <ng-content></ng-content>
-    </div>
-  </mat-drawer-content>
-</mat-drawer-container>
+    <mat-drawer-content class="drawer-content">
+      <div class="content-area">
+        <ng-content></ng-content>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
