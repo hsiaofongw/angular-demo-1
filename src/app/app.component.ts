@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { MetaDataService } from './shared-modules/meta-data/services/meta-data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'dependency-injection-demo';
+
+  constructor(
+    private metaDataService: MetaDataService,
+    private titleService: Title,
+  ) {}
+
+  ngAfterViewInit(): void {
+    const title = this.metaDataService.getMetaData().siteTitle;
+    this.titleService.setTitle(title);
+  }
 }

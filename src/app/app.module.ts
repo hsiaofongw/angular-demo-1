@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './shared-modules/layout/layout.module';
+import { MetaDataModule } from './shared-modules/meta-data/meta-data.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,8 +15,9 @@ import { LayoutModule } from './shared-modules/layout/layout.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    MetaDataModule,
   ],
-  providers: [],
+  providers: [Title],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
