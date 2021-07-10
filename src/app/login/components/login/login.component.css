@@ -1,0 +1,44 @@
+.form-item {
+  margin-bottom: 20px;
+}
+
+.input {
+  border-radius: 0px;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  border-style: solid;
+  border-color: slategray;
+  outline: none;
+}
+
+.login-page-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 90px;
+  padding-right: 90px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(min-content, auto) 1fr;
+  overflow: hidden;
+
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+.button {
+  border-radius: 0px;
+  border-color: rgba(196, 204, 211, 0.747);
+  background-color: unset;
+  box-shadow: none;
+  border-style: solid;
+}

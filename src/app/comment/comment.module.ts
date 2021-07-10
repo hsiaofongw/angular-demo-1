@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
 import { JsonViewerModule } from './shared/json-viewer/json-viewer.module';
+import { LayoutModule } from '../shared-modules/layout/layout.module';
 
 @NgModule({
   declarations: [CommentComponent, ViewCommentDetailComponent],
@@ -32,6 +33,7 @@ import { JsonViewerModule } from './shared/json-viewer/json-viewer.module';
     MatTreeModule,
     MatIconModule,
     JsonViewerModule,
+    LayoutModule,
   ],
 })
 export class CommentModule {}

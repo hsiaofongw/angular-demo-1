@@ -10,6 +10,10 @@ const routes: Routes = [
     loadChildren: () => import('./article/article.module').then(m => m.ArticleModule),
   },
   {
+    path: 'comments',
+    loadChildren: () => import('./comment/comment.module').then(m => m.CommentModule),
+  },
+  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
   },
