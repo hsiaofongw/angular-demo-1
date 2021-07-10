@@ -1,0 +1,17 @@
+<div><button (click)="goBack()">返回</button></div>
+<div>
+  <h1>登录</h1>
+  <form [formGroup]="loginForm">
+    <div>
+      <label>用户名</label>
+      <input [formControlName]="'email'" type="email" />
+    </div>
+    <div>
+      <label>密码</label>
+      <input [formControlName]="'password'" type="password" />
+    </div>
+    <div>
+      <button [disabled]="loginForm.invalid" (click)="login()">登录</button>
+    </div>
+  </form>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IMenuItem } from 'src/app/shared-modules/menu/interface';
 import { MenuService } from 'src/app/shared-modules/menu/services/menu.service';
 
@@ -14,10 +15,15 @@ export class LayoutComponent implements OnInit {
 
   constructor(
     private menuService: MenuService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
     this.menuData = this.menuService.getMenuData();
+  }
+
+  login(): void {
+    this.router.navigateByUrl('/login');
   }
 
 }
