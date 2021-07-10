@@ -1,3 +1,10 @@
 <app-layout>
-<p>article works!</p>
+
+  <div>
+    <article *ngFor="let article of articles">
+      <a [href]="article.url"><h2>{{ article.title }}</h2></a>
+      <p>{{ article.date }}</p>
+    </article>
+  </div>
+
 </app-layout>
