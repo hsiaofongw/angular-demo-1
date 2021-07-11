@@ -28,12 +28,15 @@ export class UserService {
 
   isLogedIn(): boolean {
     const tokenObject = this.retrieveTokenObject();
-    const token = tokenObject.token ?? '';
-    const decodedJWT = jwtDecode(token) as { exp: number };
-    const expInToken = decodedJWT?.exp ?? 0;
-    const now = new Date().valueOf();
+    if (tokenObject?.token) {
+      const token = tokenObject.token;
+      const decodedJWT = jwtDecode(token) as { exp: number };
+      const expInToken = decodedJWT?.exp ?? 0;
+      const now = new Date().valueOf();
+      return now < (expInToken * 1000);
+    }
 
-    return now < (expInToken * 1000);
+    return false;
   }
 
   logOut(): void {
