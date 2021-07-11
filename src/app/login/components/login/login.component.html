@@ -2,7 +2,7 @@
   <div><button class="button" (click)="goBack()">返回</button></div>
   <div class="login-form-container">
     <div>
-      <h1>登录</h1>
+      <h1 class="heading-1">登录</h1>
       <form [formGroup]="loginForm">
         <div class="form-item">
           <input
@@ -21,7 +21,7 @@
           />
         </div>
         <div>
-          <button class="button" [disabled]="loginForm.invalid" (click)="login()">登录</button>
+          <button class="button" [disabled]="loginForm.invalid || isWaiting" (click)="login()">登录</button>
         </div>
       </form>
     </div>

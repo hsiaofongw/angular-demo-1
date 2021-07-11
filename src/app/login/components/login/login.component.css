@@ -1,5 +1,5 @@
 .form-item {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .input {
@@ -11,6 +11,10 @@
   border-style: solid;
   border-color: slategray;
   outline: none;
+  font-size: inherit;
+  color: inherit;
+  background-color: inherit;
+  font-family: inherit;
 }
 
 .login-page-container {
@@ -25,6 +29,10 @@
 
   box-sizing: border-box;
   height: 100%;
+
+  font-size: 16px;
+  color: #495057;
+  background-color: #F8F9FA;
 }
 
 .login-form-container {
@@ -41,4 +49,18 @@
   background-color: unset;
   box-shadow: none;
   border-style: solid;
+  cursor: pointer;
+  font-size: inherit;
+  color: inherit;
+  background-color: inherit;
+  font-family: inherit;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.heading-1 {
+  font-size: 32px;
+  font-family: inherit;
+  margin-bottom: 1em;
+  color: inherit;
 }

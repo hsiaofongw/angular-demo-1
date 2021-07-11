@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { timeout } from 'rxjs/operators';
 import { UserService } from 'src/app/shared-modules/user/services/user.service';
 import { ITokenObject, IUserCredential } from '../../interface';
 import { LoginService } from '../../services/login.service';
@@ -19,6 +19,8 @@ export class LoginComponent implements OnInit {
     private userService: UserService,
   ) {}
 
+  isWaiting = false;
+
   loginForm = this.formBuilder.group({
     email: ['', Validators.required],
     password: ['', Validators.required],
@@ -32,9 +34,21 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.value.password as string,
     };
 
-    this.loginService.login(credential).subscribe((tokenObject: ITokenObject) => {
-      this.userService.login(tokenObject);
-    });
+    this.isWaiting = true;
+    const waitingTimeOut = 30*1000;
+    this.loginService.login(credential).pipe(
+      timeout(waitingTimeOut),
+    ).subscribe(
+      (value: ITokenObject) => {
+        this.userService.login(value);
+        this.isWaiting = false;
+      },
+
+      (error: unknown) => {
+        window.console.log(error);
+        this.isWaiting = false;
+      },
+    );
   }
 
   goBack(): void {
