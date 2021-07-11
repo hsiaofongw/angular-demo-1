@@ -23,6 +23,16 @@ export const menuData: IMenuItem[] = [
   {
     name: '友情链接',
     path: 'friends',
+    children: [
+      {
+        name: '拟添加',
+        path: 'pre-approved',
+      },
+      {
+        name: '正式',
+        path: ''
+      },
+    ]
   },
   {
     name: '留言列表',

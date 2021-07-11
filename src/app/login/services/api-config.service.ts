@@ -7,8 +7,6 @@ import {
 
 @Injectable()
 export class ApiConfigService {
-  constructor() {}
-
   getCurrentBackend(): APIConfig {
     return configurations[backendToken];
   }
