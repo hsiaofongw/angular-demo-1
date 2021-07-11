@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { timeout } from 'rxjs/operators';
 import { UserService } from 'src/app/shared-modules/user/services/user.service';
 import { ITokenObject, IUserCredential } from '../../interface';
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
     private location: Location,
     private loginService: LoginService,
     private userService: UserService,
+    private router: Router,
   ) {}
 
   isWaiting = false;
@@ -42,6 +44,7 @@ export class LoginComponent implements OnInit {
       (value: ITokenObject) => {
         this.userService.login(value);
         this.isWaiting = false;
+        this.router.navigateByUrl('/');
       },
 
       (error: unknown) => {

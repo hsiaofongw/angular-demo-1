@@ -21,7 +21,10 @@
           />
         </div>
         <div>
-          <button class="button" [disabled]="loginForm.invalid || isWaiting" (click)="login()">登录</button>
+          <button class="button" [disabled]="loginForm.invalid || isWaiting" (click)="login()">
+            <mat-spinner *ngIf="isWaiting" appSpinner class="spinner" [diameter]="16"></mat-spinner>
+            <span>{{ isWaiting ? '正在登录' : '确定' }}</span>
+          </button>
         </div>
       </form>
     </div>

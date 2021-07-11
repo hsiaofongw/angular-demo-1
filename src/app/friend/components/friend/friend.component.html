@@ -1,5 +1,5 @@
 <app-layout>
   <ul>
-    <li *ngFor="let friend of friends">{{ friend.websiteTitle }}</li>
+    <li *ngFor="let friend of friends"><a [href]="friend.websiteURL">{{ friend.websiteTitle }}</a></li>
   </ul>
 </app-layout>

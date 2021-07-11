@@ -9,23 +9,25 @@ import { UsernamePasswordLoginService } from './services/username-password-login
 import { HttpClientModule } from '@angular/common/http';
 import { ApiConfigService } from './services/api-config.service';
 import { UserModule } from '../shared-modules/user/user.module';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { SpinnerDirective } from './directives/spinner.directive';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [
-    LoginComponent
-  ],
+  declarations: [LoginComponent, SpinnerDirective],
   imports: [
     CommonModule,
     LoginRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     UserModule,
+    MatProgressSpinnerModule,
+    RouterModule,
   ],
   providers: [
     { provide: LoginService, useClass: UsernamePasswordLoginService },
     ApiConfigService,
     UsernamePasswordLoginService,
-  ]
+  ],
 })
-export class LoginModule { }
+export class LoginModule {}
