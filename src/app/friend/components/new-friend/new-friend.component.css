@@ -1,0 +1,17 @@
+
+.button {
+  border-radius: 0px;
+  border-color: rgba(196, 204, 211, 0.747);
+  background-color: unset;
+  box-shadow: none;
+  border-style: solid;
+  cursor: pointer;
+  font-size: inherit;
+  color: inherit;
+  background-color: inherit;
+  font-family: inherit;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: flex;
+  align-items: center;
+}

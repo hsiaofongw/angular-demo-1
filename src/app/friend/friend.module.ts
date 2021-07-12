@@ -8,10 +8,12 @@ import { HttpFriendService } from './services/http-friend.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FriendComponent } from './components/friend/friend.component';
 import { LayoutModule } from '../shared-modules/layout/layout.module';
+import { NewFriendComponent } from './components/new-friend/new-friend.component';
 
 @NgModule({
   declarations: [
-    FriendComponent
+    FriendComponent,
+    NewFriendComponent
   ],
   imports: [CommonModule, FriendRoutingModule, HttpClientModule, LayoutModule],
   providers: [

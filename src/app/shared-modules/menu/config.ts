@@ -32,6 +32,10 @@ export const menuData: IMenuItem[] = [
         name: '正式',
         path: ''
       },
+      {
+        name: '新增',
+        path: 'new'
+      }
     ]
   },
   {
