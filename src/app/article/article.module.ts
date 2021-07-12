@@ -5,23 +5,25 @@ import { ArticleRoutingModule } from './article-routing.module';
 import { ArticleComponent } from './components/article/article.component';
 import { LayoutModule } from '../shared-modules/layout/layout.module';
 import { HttpClientModule } from '@angular/common/http';
+import { DateTimeHelperModule } from '../shared-modules/date-time-helper/date-time-helper.module';
 import { ArticleService } from './service/article.service';
-import { JsdelivrArticleService } from './service/jsdelivr-article.service';
-
+import { HttpArticleService } from './service/http-article.service';
+import { ApiConfigService } from './service/api-config.service';
+import { UnixTimestampToStringPipe } from './pipes/unix-timestamp-to-string.pipe';
 
 @NgModule({
-  declarations: [
-    ArticleComponent
-  ],
+  declarations: [ArticleComponent, UnixTimestampToStringPipe],
   imports: [
     CommonModule,
     ArticleRoutingModule,
     LayoutModule,
     HttpClientModule,
+    DateTimeHelperModule,
   ],
   providers: [
-    JsdelivrArticleService,
-    { provide: ArticleService, useClass: JsdelivrArticleService },
-  ]
+    { provide: ArticleService, useClass: HttpArticleService },
+    HttpArticleService,
+    ApiConfigService,
+  ],
 })
-export class ArticleModule { }
+export class ArticleModule {}

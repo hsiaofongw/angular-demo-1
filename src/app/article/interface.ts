@@ -1,11 +1,14 @@
 export interface IArticle {
   title: string;
-  date: string;
+  created: number;
+  modified?: number;
+  author?: string;
+  description?: string;
   url: string;
 }
 
 export interface IArticleQueryResult {
-  offset: number;
   totalCounts: number;
-  results: IArticle[];
+  offset: number;
+  result: IArticle[];
 }
