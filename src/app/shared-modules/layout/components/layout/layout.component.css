@@ -14,6 +14,7 @@
 
 .sider {
   width: 200px;
+  border: none;
 }
 
 .title {
@@ -38,4 +39,22 @@
   box-sizing: border-box;
   display: grid;
   grid-template-rows: minmax(min-content, auto) 1fr;
+}
+
+.header-toolbar {
+  background: #FFF;
+  color: #000000ad;
+  padding: 0px;
+}
+
+.header-toolbar-inner-container {
+  flex-grow: 1;
+  flex-basis: auto;
+  flex-shrink: 0;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 16px;
+  box-shadow: rgb(0 0 0 / 10%) 0px 1px 6px 1px;
+  z-index: 2;
 }

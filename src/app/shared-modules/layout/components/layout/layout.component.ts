@@ -28,6 +28,8 @@ export class LayoutComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    window.console.log('ngOnInit');
+
     this.menuData = this.menuService.getMenuData();
     this.siteMetaData = this.metaDataService.getMetaData();
     this.loginState = this.userService.isLogedIn();
@@ -41,6 +43,10 @@ export class LayoutComponent implements OnInit {
   logOut(): void {
     this.userService.logOut();
     this.loginState = this.userService.isLogedIn();
+  }
+
+  ngOnDestroy(): void {
+    window.console.log('ngOnDestroy');
   }
 
 }

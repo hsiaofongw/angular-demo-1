@@ -1,19 +1,23 @@
 <div class="layout-container">
-  <mat-toolbar color="primary">
-    <button
-      (click)="drawer.toggle()"
-      mat-icon-button
-      class="example-icon"
-      aria-label="Example icon-button with menu icon"
-    >
-      <mat-icon>menu</mat-icon>
-    </button>
-    <div class="header">
-      <div>
-        <span class="title">{{ siteMetaData.siteTitle }}</span>
+  <mat-toolbar color="primary" class="header-toolbar">
+
+    <div class="header-toolbar-inner-container">
+      <button
+        (click)="drawer.toggle()"
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="header">
+        <div>
+          <span class="title">{{ siteMetaData.siteTitle }}</span>
+        </div>
+        <button mat-button (click)="loginState ? logOut() : login()">{{ loginState ? '登出' : '登录' }}</button>
       </div>
-      <button mat-button (click)="loginState ? logOut() : login()">{{ loginState ? '登出' : '登录' }}</button>
     </div>
+
   </mat-toolbar>
 
   <mat-drawer-container class="drawer-container" [hasBackdrop]="false">
