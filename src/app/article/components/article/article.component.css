@@ -1,6 +1,6 @@
 .anchor {
-  color: #6A87CD;
   text-decoration: none;
+  color: inherit;
 }
 
 .heading-2 {
@@ -9,4 +9,9 @@
 
 .article-excerpt {
   margin-bottom: 20px;
+  color: #000000AD;
+}
+
+.article-excerpt:hover {
+  background: rgb(203, 210, 216);
 }
