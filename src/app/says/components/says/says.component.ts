@@ -8,7 +8,8 @@ import {
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ISay, ISayQueryResult } from '../../interface';
+import { Observable } from 'rxjs';
+import { ICreateSayDto, ICreateSayResult, ISay, ISayQueryResult } from '../../interface';
 import { SayService } from '../../services/say.service';
 
 @Component({
@@ -69,8 +70,14 @@ export class SaysComponent implements OnInit {
     this.fetchNextPage().subscribe((data: ISayQueryResult) => this.load(data));
   }
 
+  /** 重置当前页数据 */
+  resetCurrentPageData(): void {
+    this.currentMaxPageIndex = 0;
+    this.says = [];
+  }
+
   /** 拉取下一页数据 */
-  fetchNextPage() {
+  fetchNextPage(): Observable<ISayQueryResult> {
     const nextPageIndex = this.currentMaxPageIndex + 1;
     const offset = (nextPageIndex-1) * this.pageSize;
     const limit = this.pageSize;
@@ -78,7 +85,7 @@ export class SaysComponent implements OnInit {
   }
 
   /** 加载数据 */
-  load(queryResult: ISayQueryResult) {
+  load(queryResult: ISayQueryResult): void {
     let pageIndex = 0;
     if ((queryResult.offset+this.pageSize) % this.pageSize === 0) {
       pageIndex = Math.floor((queryResult.offset + this.pageSize) / this.pageSize);
@@ -90,12 +97,32 @@ export class SaysComponent implements OnInit {
     }
   }
 
-  handleOk(): void {
+  /** 创建一条说说 */
+  createSay(createSayDto: ICreateSayDto): Observable<ICreateSayResult> {
+    return this.sayService.createSay(createSayDto);
+  }
+
+  /** 关闭浮窗 */
+  closeOverlay(): void {
     this.isOverlayDisplay = false;
+    this.saysInputForm.reset();
+  }
+
+  /** 处理「确定」按钮点击 */
+  handleOk(): void {
+    if (this.saysInputForm.invalid) {
+      return;
+    }
+
+    this.createSay({ content: this.saysInputForm.value.content as string }).subscribe(() => {
+      this.closeOverlay();
+      this.resetCurrentPageData();
+      this.fetchNextPage().subscribe(data => this.load(data));
+    });
   }
 
   handleCancel(): void {
-    this.isOverlayDisplay = false;
+    this.closeOverlay();
   }
 
   handleOpenOverlay(): void {
