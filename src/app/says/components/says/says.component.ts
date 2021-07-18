@@ -1,5 +1,6 @@
 import { animate, group, query, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-says',
@@ -25,9 +26,17 @@ import { Component, OnInit } from '@angular/core';
 export class SaysComponent implements OnInit {
   isOverlayDisplay = false;
 
-  constructor() {}
+  saysInputForm = this.formBuilder.group({
+    content: ['', Validators.required],
+  });
 
-  ngOnInit(): void {}
+  constructor(private formBuilder: FormBuilder,) {}
+
+  ngOnInit(): void {
+    this.saysInputForm.valueChanges.subscribe(saysUpdate => {
+      window.console.log(saysUpdate);
+    });
+  }
 
   handleOk(): void {
     this.isOverlayDisplay = false;

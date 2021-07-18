@@ -7,6 +7,7 @@ import { LayoutModule } from '../shared-modules/layout/layout.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TeletypeModule } from './submodules/teletype/teletype.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { TeletypeModule } from './submodules/teletype/teletype.module';
     MatButtonModule,
     MatDialogModule,
     TeletypeModule,
+    ReactiveFormsModule,
   ]
 })
 export class SaysModule { }

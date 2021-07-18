@@ -1,10 +1,12 @@
 <div class="textarea-container">
   <textarea
+    #textarea
     appAutoResize
     [maxHeightPx]="200"
     class="overlay-input"
     (focus)="inputActive = 'active'"
-    (blur)="inputActive = 'inActive'"
+    (blur)="handleBlur()"
+    [disabled]="isDisabled"
   ></textarea>
   <div class="animate-bar-container"><div [@inputActive]="inputActive" class="animate-bar"></div></div>
 </div>
