@@ -33,8 +33,10 @@
       >创建</button>
     </div>
 
-    <div class="says-container">
-      <app-say-card *ngFor="let say of says" [say]="say"></app-say-card>
+    <div class="says-outer-container">
+      <div class="says-container">
+        <app-say-card *ngFor="let say of says" [say]="say"></app-say-card>
+      </div>
     </div>
   </div>
 </app-layout>

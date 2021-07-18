@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+  overflow: hidden;
 }
 
 .button-section {
@@ -73,13 +74,15 @@
 
 .says-container {
   display: flex;
-  flex-basis: auto;
-  flex-shrink: 0;
-  flex-grow: 1;
   width: 100%;
   grid-gap: 16px;
   gap: 16px;
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: flex-start;
+}
+
+.says-outer-container {
+  overflow: scroll;
+  padding-bottom: 64px;
 }
