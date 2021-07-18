@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ICreateSayDto, ICreateSayResult, IQuerySaysDto, ISayQueryResult } from '../interface';
+import { ICreateSayDto, ICreateSayResult, IDeleteResult, IDeleteSayDto, IQuerySaysDto, ISayQueryResult } from '../interface';
 
 @Injectable()
 export abstract class SayService {
@@ -10,4 +10,7 @@ export abstract class SayService {
 
   /** 创建说说 */
   abstract createSay(createSayDto: ICreateSayDto): Observable<ICreateSayResult>;
+
+  /** 删除说说 */
+  abstract deleteSay(deleteSayDto: IDeleteSayDto): Observable<IDeleteResult>;
 }

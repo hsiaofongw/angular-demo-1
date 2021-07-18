@@ -35,7 +35,7 @@
 
     <div class="says-outer-container">
       <div class="says-container">
-        <app-say-card *ngFor="let say of says" [say]="say"></app-say-card>
+        <app-say-card (onDeleteButtonClick)="handleDelete($event)" *ngFor="let say of says" [say]="say"></app-say-card>
       </div>
     </div>
   </div>

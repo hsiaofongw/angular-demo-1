@@ -1,4 +1,11 @@
-<div class="say-card">
+<div
+  class="say-card"
+  (mouseover)="showDeleteButton = true"
+  (mouseleave)="showDeleteButton = false"
+>
+  <div class="say-context-menu">
+    <mat-icon (click)="onDeleteButtonClick.emit(say)" *ngIf="showDeleteButton" class="delete-icon">delete</mat-icon>
+  </div>
   <div class="say-datetime">{{ say.createdAt | timestampToDateString }}</div>
   <div class="say-content">
     <p *ngFor="let paragraph of say.content.split('\n')">{{ paragraph }}</p>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ISay } from 'src/app/says/interface';
 
 @Component({
@@ -10,6 +10,11 @@ export class SayCardComponent implements OnInit {
 
   @Input()
   say!: ISay;
+
+  @Output()
+  onDeleteButtonClick = new EventEmitter<ISay>();
+
+  showDeleteButton = false;
 
   constructor() { }
 

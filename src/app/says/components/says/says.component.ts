@@ -9,7 +9,7 @@ import {
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { ICreateSayDto, ICreateSayResult, ISay, ISayQueryResult } from '../../interface';
+import { ICreateSayDto, ICreateSayResult, IDeleteResult, ISay, ISayQueryResult } from '../../interface';
 import { SayService } from '../../services/say.service';
 
 @Component({
@@ -127,5 +127,14 @@ export class SaysComponent implements OnInit {
 
   handleOpenOverlay(): void {
     this.isOverlayDisplay = true;
+  }
+
+  handleDelete(say: ISay) {
+    this.sayService.deleteSay(say).subscribe((result: IDeleteResult) => {
+      if (result?.ok) {
+        this.resetCurrentPageData();
+        this.fetchNextPage().subscribe(data => this.load(data));
+      }
+    });
   }
 }

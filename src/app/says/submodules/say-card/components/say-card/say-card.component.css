@@ -17,3 +17,22 @@
 .say-datetime {
   margin-bottom: 16px;
 }
+
+.say-context-menu {
+  height: 0px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-icon {
+  color: #00000069;
+  font-size: 16px;
+  position: relative;
+  top: 1px;
+  cursor: pointer;
+  transition: color 100ms ease-in-out;
+}
+
+.delete-icon:hover {
+  color: #00000091;
+}
