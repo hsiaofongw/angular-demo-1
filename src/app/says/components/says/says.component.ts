@@ -1,4 +1,4 @@
-import { animate, style, transition, trigger } from '@angular/animations';
+import { animate, group, query, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
     trigger('overlayEnterExit', [
       transition(':enter', [
         style({ backgroundColor: 'rgba(0, 0, 0, 0%)' }),
-        animate('150ms ease-out', style({ backgroundColor: 'rgba(0, 0, 0, 36%)' })),
+        query('.dialog', style({ transform: 'translateY(24px)' })),
+
+        group([
+          animate('150ms ease-out', style({ backgroundColor: 'rgba(0, 0, 0, 36%)' })),
+          query('.dialog', animate('150ms ease-out', style({ transform: 'translateY(0px)' }))),
+        ])
       ]),
       transition(':leave', [
         animate('80ms ease-in', style({ backgroundColor: 'rgba(0, 0, 0, 0%)' })),
