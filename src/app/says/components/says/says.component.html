@@ -1,0 +1,31 @@
+<div @overlayEnterExit class="overlay" *ngIf="isOverlayDisplay" (click)="handleCancel()">
+  <div (click)="$event.stopPropagation()">
+    <div class="dialog">
+      <div class="header">
+        <h1 class="heading-1">Hi~ 今天想说什么？</h1>
+      </div>
+      <div class="overlay-button-section">
+        <button
+          mat-button
+          (click)="handleCancel()"
+        >取消</button>
+        <button
+          mat-button
+          class="highlight-button"
+          (click)="handleOk()"
+        >确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-layout>
+  <div class="comments-page-container">
+    <div class="button-section">
+      <button
+        mat-raised-button
+        (click)="handleOpenOverlay()"
+      >创建</button>
+    </div>
+  </div>
+</app-layout>
