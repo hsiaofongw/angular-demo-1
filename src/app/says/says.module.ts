@@ -6,6 +6,7 @@ import { SaysComponent } from './components/says/says.component';
 import { LayoutModule } from '../shared-modules/layout/layout.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TeletypeModule } from './submodules/teletype/teletype.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     LayoutModule,
     MatButtonModule,
     MatDialogModule,
+    TeletypeModule,
   ]
 })
 export class SaysModule { }

@@ -48,3 +48,24 @@
   background-color: rgba(0, 0, 0, 0.08);
 }
 
+.overlay-input {
+  resize: none;
+  border-radius: 0px;
+  border-style: solid;
+  outline: none;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  border-color: #0000006e;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+
+.overlay-input-section {
+  margin-bottom: 16px;
+}

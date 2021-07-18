@@ -1,0 +1,35 @@
+
+.overlay-input {
+  resize: none;
+  border-radius: 0px;
+  border-style: solid;
+  outline: none;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 2px;
+  border-color: #0000006e;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  font-weight: inherit;
+}
+
+.animate-bar-container {
+  height: 0px;
+  position: relative;
+  top: -7px;
+}
+
+.animate-bar {
+  background-color: #0083C8;
+  border: none;
+  height: 2px;
+  width: 100%;
+}
+
+.textarea-container {
+  overflow: hidden;
+}

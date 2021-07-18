@@ -1,0 +1,8 @@
+<div class="textarea-container">
+  <textarea
+    class="overlay-input"
+    (focus)="inputActive = 'active'"
+    (blur)="inputActive = 'inActive'"
+  ></textarea>
+  <div class="animate-bar-container"><div [@inputActive]="inputActive" class="animate-bar"></div></div>
+</div>
