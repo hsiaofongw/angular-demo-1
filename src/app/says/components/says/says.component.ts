@@ -9,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
     trigger('overlayEnterExit', [
       transition(':enter', [
         style({ backgroundColor: 'rgba(0, 0, 0, 0%)' }),
-        query('.dialog', style({ transform: 'translateY(24px)' })),
+        query('.dialog', style({ transform: 'translateY(36px) scale(0.7)' })),
 
         group([
           animate('150ms ease-out', style({ backgroundColor: 'rgba(0, 0, 0, 36%)' })),
-          query('.dialog', animate('150ms ease-out', style({ transform: 'translateY(0px)' }))),
+          query('.dialog', animate('150ms ease-out', style({ transform: 'translateY(0px) scale(1)' }))),
         ])
       ]),
       transition(':leave', [
