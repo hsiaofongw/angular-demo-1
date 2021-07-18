@@ -32,5 +32,9 @@
         (click)="handleOpenOverlay()"
       >创建</button>
     </div>
+
+    <div class="says-container">
+      <app-say-card *ngFor="let say of says" [say]="say"></app-say-card>
+    </div>
   </div>
 </app-layout>

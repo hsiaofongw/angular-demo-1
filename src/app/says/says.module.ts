@@ -8,6 +8,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TeletypeModule } from './submodules/teletype/teletype.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SayCardModule } from './submodules/say-card/say-card.module';
+import { HttpClientModule } from '@angular/common/http';
+import { SayService } from './services/say.service';
+import { HttpSayService } from './services/http-say.service';
 
 
 @NgModule({
@@ -22,6 +26,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     TeletypeModule,
     ReactiveFormsModule,
+    SayCardModule,
+    HttpClientModule,
+  ],
+  providers: [
+    { provide: SayService, useClass: HttpSayService },
+    HttpSayService,
   ]
 })
 export class SaysModule { }

@@ -1,0 +1,19 @@
+
+.say-card {
+  max-width: 400px;
+  max-height: 300px;
+  background-color: #FFF;
+  font-family: HanziPenSC-W3, HanziPen SC;
+  height: -webkit-max-content;
+  height: max-content;
+  overflow-y: scroll;
+  padding: 16px;
+  min-width: 300px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0px 2px 3px 1px rgb(0 0 0 / 20%);
+}
+
+.say-datetime {
+  margin-bottom: 16px;
+}

@@ -1,0 +1,6 @@
+<div class="say-card">
+  <div class="say-datetime">{{ say.createdAt | timestampToDateString }}</div>
+  <div class="say-content">
+    <p *ngFor="let paragraph of say.content.split('\n')">{{ paragraph }}</p>
+  </div>
+</div>
