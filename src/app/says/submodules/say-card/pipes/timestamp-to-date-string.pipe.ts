@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DateTimeHelperService } from 'src/app/shared-modules/date-time-helper/services/date-time-helper.service';
 
 @Pipe({
   name: 'timestampToDateString',
