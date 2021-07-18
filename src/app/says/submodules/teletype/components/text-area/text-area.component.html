@@ -1,5 +1,7 @@
 <div class="textarea-container">
   <textarea
+    appAutoResize
+    [maxHeightPx]="200"
     class="overlay-input"
     (focus)="inputActive = 'active'"
     (blur)="inputActive = 'inActive'"
