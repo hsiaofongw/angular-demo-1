@@ -26,6 +26,10 @@ const routes: Routes = [
     loadChildren: () => import('./says/says.module').then(m => m.SaysModule),
   },
   {
+    path: 'carousel-demo',
+    loadChildren: () => import('./carousel-demo/carousel-demo.module').then(m => m.CarouselDemoModule),
+  },
+  {
     path: '**',
     loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule),
   }

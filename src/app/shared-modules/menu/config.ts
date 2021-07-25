@@ -1,4 +1,4 @@
-import { IMenuItem } from "./interface";
+import { IMenuItem } from './interface';
 
 /** 菜单数据 */
 export const menuData: IMenuItem[] = [
@@ -17,8 +17,8 @@ export const menuData: IMenuItem[] = [
       {
         name: 'Markdown 文章',
         path: 'markdown',
-      }
-    ]
+      },
+    ],
   },
   {
     name: '友情链接',
@@ -30,13 +30,13 @@ export const menuData: IMenuItem[] = [
       },
       {
         name: '正式',
-        path: ''
+        path: '',
       },
       {
         name: '新增',
-        path: 'new'
-      }
-    ]
+        path: 'new',
+      },
+    ],
   },
   {
     name: '留言列表',
@@ -61,11 +61,15 @@ export const menuData: IMenuItem[] = [
       {
         name: '个人简历',
         path: 'resume',
-      }
-    ]
+      },
+    ],
   },
   {
     name: '个人动态',
     path: 'says',
+  },
+  {
+    name: '聊天室',
+    path: 'chatroom',
   },
 ];
