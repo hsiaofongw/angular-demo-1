@@ -1,22 +1,6 @@
 <div class="outer-container">
-  <header>
-    <h2>探索子博客</h2>
-    <ul class="menu">
-      <li><a [routerLink]="''">文章</a></li>
-      <li><a [routerLink]="''">友链</a></li>
-      <li><a href="https://travellings.link/" target="_blank">开往</a></li>
-      <li><a [routerLink]="''">关于</a></li>
-    </ul>
-  </header>
-
-  <main>
-    <h1>文章列表</h1>
-    <div class="article-list-container">
-      <ul class="article-list">
-        <li *ngFor="let article of articles">
-          <app-article [article]="article"></app-article>
-        </li>
-      </ul>
-    </div>
-  </main>
+  <app-header></app-header>
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
 </div>

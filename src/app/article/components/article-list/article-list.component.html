@@ -1,0 +1,12 @@
+<div class="article-list-outer-container">
+  <h1>文章列表</h1>
+
+  <div class="article-list-container">
+    <ul class="article-list">
+      <li *ngFor="let article of articles">
+        <app-article [article]="article"></app-article>
+      </li>
+    </ul>
+  </div>
+
+</div>

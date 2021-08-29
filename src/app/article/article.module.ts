@@ -10,9 +10,14 @@ import { ArticleService } from './service/article.service';
 import { HttpArticleService } from './service/http-article.service';
 import { ApiConfigService } from './service/api-config.service';
 import { UnixTimestampToStringPipe } from './pipes/unix-timestamp-to-string.pipe';
+import { ArticleListComponent } from './components/article-list/article-list.component';
 
 @NgModule({
-  declarations: [ArticleComponent, UnixTimestampToStringPipe],
+  declarations: [
+    ArticleComponent,
+    UnixTimestampToStringPipe,
+    ArticleListComponent,
+  ],
   imports: [
     CommonModule,
     ArticleRoutingModule,
@@ -25,8 +30,6 @@ import { UnixTimestampToStringPipe } from './pipes/unix-timestamp-to-string.pipe
     HttpArticleService,
     ApiConfigService,
   ],
-  exports: [
-    ArticleComponent
-  ]
+  exports: [ArticleComponent, ArticleListComponent],
 })
 export class ArticleModule {}

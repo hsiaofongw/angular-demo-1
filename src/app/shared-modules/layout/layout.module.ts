@@ -12,10 +12,11 @@ import { MetaDataModule } from '../meta-data/meta-data.module';
 import { NavTreeComponent } from './components/nav-tree/nav-tree.component';
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { UserModule } from '../user/user.module';
+import { HeaderComponent } from './components/header/header.component';
 
 /** 此 Module 负责导出一个实现全局 Layout 的组件 */
 @NgModule({
-  declarations: [LayoutComponent, NavTreeComponent],
+  declarations: [LayoutComponent, NavTreeComponent, HeaderComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -29,6 +30,6 @@ import { UserModule } from '../user/user.module';
     CdkTreeModule,
     UserModule,
   ],
-  exports: [LayoutComponent],
+  exports: [LayoutComponent, HeaderComponent],
 })
 export class LayoutModule {}
