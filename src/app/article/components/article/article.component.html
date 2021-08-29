@@ -1,10 +1,14 @@
-<app-layout>
-
-  <div>
-    <article class="article-excerpt" *ngFor="let article of articles">
-      <a class="anchor" [href]="article.url"><h2 class="heading-2">{{ article.title }}</h2></a>
-      <p>{{ article.created | unixTimestampToString }}</p>
-    </article>
+<article *ngIf="article" (click)="handleClick(article)">
+  <div class="title">
+    <h1>{{ article.title }}</h1>
   </div>
-
-</app-layout>
+  <div class="description">{{ article.description }}</div>
+  <ng-container *ngIf="!!article.date; else created">
+    <div class="created">{{ article.date }}</div>
+  </ng-container>
+  <ng-template #created
+    ><div class="created">
+      {{ article.created | unixTimestampToString }}
+    </div></ng-template
+  >
+</article>

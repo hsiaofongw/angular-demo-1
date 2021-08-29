@@ -1,24 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { IArticle, IArticleQueryResult } from '../../interface';
-import { ArticleService } from '../../service/article.service';
+import { Component, Input } from '@angular/core';
+import { IArticle } from '../../interface';
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.css']
+  styleUrls: ['./article.component.scss']
 })
-export class ArticleComponent implements OnInit {
+export class ArticleComponent {
 
-  articles: IArticle[] = [];
+  @Input()
+  article?: IArticle;
 
-  constructor(
-    private articleService: ArticleService,
-  ) { }
-
-  ngOnInit(): void {
-    this.articleService.getArticles().subscribe((queryResult: IArticleQueryResult) => {
-      this.articles = queryResult.result;
-    });
+  handleClick(article: IArticle) {
+    window.open(article.url, '_blank');
   }
-
 }

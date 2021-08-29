@@ -1,0 +1,109 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'base';
+
+$font-family: 'Noto Sans';
+
+@mixin rebase(
+  $rebase03,
+  $rebase02,
+  $rebase01,
+  $rebase00,
+  $rebase0,
+  $rebase1,
+  $rebase2,
+  $rebase3
+) {
+  background-color: $rebase03;
+
+  color: $rebase0;
+
+  * {
+    color: $rebase0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $rebase1;
+    border-color: $rebase0;
+    font-family: $font-family;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  a,
+  a:active,
+  a:visited {
+    color: $rebase1;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    @include rebase(
+      base.$base3,
+      base.$base2,
+      base.$base1,
+      base.$base0,
+      base.$base00,
+      base.$base01,
+      base.$base02,
+      base.$base03
+    );
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    @include rebase(
+      base.$base03,
+      base.$base02,
+      base.$base01,
+      base.$base00,
+      base.$base0,
+      base.$base1,
+      base.$base2,
+      base.$base3
+    );
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: $font-family;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,74 @@
+@use '../base';
+
+$header-height: 70px;
+$menu-column-gap: 16px;
+
+header {
+  height: $header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  header {
+    background-color: base.$base02;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  header {
+    background-color: base.$base2;
+  }
+}
+
+.menu {
+  display: flex;
+  column-gap: $menu-column-gap;
+}
+
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  flex: 1;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 376px) {
+  main {
+    padding: 20px 20px;
+  }
+}
+
+@media (min-width: 478px) {
+  main {
+    padding: 40px 40px;
+  }
+}
+
+.article-list-container {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+.article-list {
+  li {
+    margin-top: 36px;
+  }
+
+  max-width: 680px;
+}
+

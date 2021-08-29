@@ -25,5 +25,8 @@ import { UnixTimestampToStringPipe } from './pipes/unix-timestamp-to-string.pipe
     HttpArticleService,
     ApiConfigService,
   ],
+  exports: [
+    ArticleComponent
+  ]
 })
 export class ArticleModule {}

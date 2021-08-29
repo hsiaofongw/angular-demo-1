@@ -36,6 +36,10 @@ export const menuData: IMenuItem[] = [
         name: '新增',
         path: 'new',
       },
+      {
+        name: '个人收藏',
+        path: 'favourites'
+      }
     ],
   },
   {

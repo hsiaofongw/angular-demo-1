@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './shared-modules/layout/layout.module';
 import { MetaDataModule } from './shared-modules/meta-data/meta-data.module';
+import { ArticleModule } from './article/article.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { MetaDataModule } from './shared-modules/meta-data/meta-data.module';
     BrowserAnimationsModule,
     LayoutModule,
     MetaDataModule,
+    ArticleModule
   ],
   providers: [Title],
   bootstrap: [AppComponent],
