@@ -1,5 +1,7 @@
-<app-layout>
-  <ul>
-    <li *ngFor="let friend of friends"><a [href]="friend.websiteURL">{{ friend.websiteTitle }}</a></li>
-  </ul>
-</app-layout>
+<article *ngIf="!!friend" (click)="handleClick(friend)">
+  <div class="title">
+    <h1>{{ friend.websiteTitle }}</h1>
+  </div>
+  <div class="description">{{ friend.description }}</div>
+  <div class="created">{{ friend.registerDate }}</div>
+</article>

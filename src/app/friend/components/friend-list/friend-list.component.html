@@ -1,0 +1,11 @@
+<div class="article-list-outer-container">
+  <h1>友链列表</h1>
+
+  <div class="article-list-container">
+    <ul class="article-list">
+      <li *ngFor="let friend of friends">
+        <app-friend [friend]="friend"></app-friend>
+      </li>
+    </ul>
+  </div>
+</div>

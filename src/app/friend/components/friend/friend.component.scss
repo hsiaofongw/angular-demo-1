@@ -1,0 +1,27 @@
+@use '../../../../base';
+
+article {
+  
+  .description, .created {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 6px;
+  }
+
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 200ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  article:hover {
+    background-color: base.$base02;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  article:hover {
+    background-color: base.$base2;
+  }
+}

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArticleListComponent } from './article/components/article-list/article-list.component';
+import { FriendListComponent } from './friend/components/friend-list/friend-list.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'friends',
-    loadChildren: () => import('./friend/friend.module').then(m => m.FriendModule),
+    component: FriendListComponent,
   },
   {
     path: 'login',
