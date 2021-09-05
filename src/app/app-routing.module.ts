@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArticleModule } from './article/article.module';
 import { ArticleListComponent } from './article/components/article-list/article-list.component';
 import { FriendListComponent } from './friend/components/friend-list/friend-list.component';
 
@@ -9,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'articles',
-    component: ArticleListComponent
+    loadChildren: () => ArticleModule,
   },
   {
     path: 'comments',

@@ -11,12 +11,14 @@ import { HttpArticleService } from './service/http-article.service';
 import { ApiConfigService } from './service/api-config.service';
 import { UnixTimestampToStringPipe } from './pipes/unix-timestamp-to-string.pipe';
 import { ArticleListComponent } from './components/article-list/article-list.component';
+import { MarkdownComponent } from './components/markdown/markdown.component';
 
 @NgModule({
   declarations: [
     ArticleComponent,
     UnixTimestampToStringPipe,
     ArticleListComponent,
+    MarkdownComponent,
   ],
   imports: [
     CommonModule,

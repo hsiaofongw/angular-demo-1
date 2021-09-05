@@ -1,0 +1,3 @@
+[submodule "src/externals/blog-backend-nest"]
+	path = src/externals/blog-backend-nest
+	url = github:idea-ignites/blog-backend-nest.git
