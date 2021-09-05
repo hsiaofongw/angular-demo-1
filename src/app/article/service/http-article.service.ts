@@ -1,20 +1,19 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { APIConfig } from 'src/app/shared-modules/config/interfaces';
+import { API_CONFIG } from '../config';
 import { IArticleQueryResult } from '../interface';
-import { ApiConfigService } from './api-config.service';
 import { ArticleService } from './article.service';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class HttpArticleService implements ArticleService {
-
   constructor(
-    private apiConfigService: ApiConfigService,
     private httpClient: HttpClient,
-  ) { }
+    @Inject(API_CONFIG) private apiConfig: APIConfig,
+  ) {}
 
   getArticles(): Observable<IArticleQueryResult> {
-    const apiPath = this.apiConfigService.getAllArticlesPath();
-    return this.httpClient.get<IArticleQueryResult>(apiPath);
+    return null as any;
   }
 }

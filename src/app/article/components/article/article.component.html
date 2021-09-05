@@ -6,9 +6,10 @@
   <ng-container *ngIf="!!article.date; else created">
     <div class="created">{{ article.date }}</div>
   </ng-container>
+
   <ng-template #created
     ><div class="created">
-      {{ article.created | unixTimestampToString }}
+      {{ '' }}
     </div></ng-template
   >
 </article>

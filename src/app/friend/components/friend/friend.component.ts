@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { IFriend } from '../../interface';
 
 @Component({
   selector: 'app-friend',
@@ -8,11 +7,11 @@ import { IFriend } from '../../interface';
 })
 export class FriendComponent {
 
-  @Input()
-  friend?: IFriend;
+  // @Input()
+  // friend?: IFriend;
 
-  handleClick(friend: IFriend) {
-    window.open(friend.websiteURL, '_blank');
-  }
+  // handleClick(friend: IFriend) {
+  //   window.open(friend.websiteURL, '_blank');
+  // }
 
 }

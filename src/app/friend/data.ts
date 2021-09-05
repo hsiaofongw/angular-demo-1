@@ -1,6 +1,5 @@
-import { IFriend } from "./interface";
 
-export const friends: IFriend[] = [
+export const friends: any[] = [
     {
         "title": "idealclover",
         "description": "是翠翠的个人网站！",

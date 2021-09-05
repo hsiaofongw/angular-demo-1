@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IArticle } from '../../interface';
-import { exampleArticles } from '../../example-data';
 
 @Component({
   selector: 'app-article-list',
@@ -9,7 +8,7 @@ import { exampleArticles } from '../../example-data';
 })
 export class ArticleListComponent implements OnInit {
   @Input()
-  articles: IArticle[] = exampleArticles;
+  articles: IArticle[] = [];
 
   constructor() {}
 

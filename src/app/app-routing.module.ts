@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArticleModule } from './article/article.module';
 import { ArticleListComponent } from './article/components/article-list/article-list.component';
-import { FriendListComponent } from './friend/components/friend-list/friend-list.component';
+// import { FriendListComponent } from './friend/components/friend-list/friend-list.component';
 
 const routes: Routes = [
   {
@@ -16,10 +16,10 @@ const routes: Routes = [
     path: 'comments',
     loadChildren: () => import('./comment/comment.module').then(m => m.CommentModule),
   },
-  {
-    path: 'friends',
-    component: FriendListComponent,
-  },
+  // {
+  //   path: 'friends',
+  //   component: FriendListComponent,
+  // },
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule),

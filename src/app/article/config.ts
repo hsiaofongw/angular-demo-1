@@ -1,17 +1,9 @@
-type APIConfig = {
-  server: string;
-  getAllArticlesPath: string;
+import { InjectionToken } from '@angular/core';
+import { APIConfig } from '../shared-modules/config/interfaces';
+
+export const DEFAULT_API_CONFIG: APIConfig = {
+  server: 'http://localhost:3000',
+  restfulPath: '/api/v1/articles',
 };
 
-type APIConfigMap = {
-  [key: string]: APIConfig;
-};
-
-export const API_CONFIG: APIConfigMap = {
-  'dev': {
-    server: 'http://localhost:3000',
-    getAllArticlesPath: '/api/v1/articles',
-  },
-};
-
-export const CURRENT_BACKEND: keyof APIConfigMap = 'dev';
+export const API_CONFIG = new InjectionToken<APIConfig>('API_CONFIG');

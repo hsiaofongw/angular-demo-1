@@ -12,6 +12,6 @@ export class ArticleComponent {
   article?: IArticle;
 
   handleClick(article: IArticle) {
-    window.open(article.url, '_blank');
+    // window.open(article.url, '_blank');
   }
 }
