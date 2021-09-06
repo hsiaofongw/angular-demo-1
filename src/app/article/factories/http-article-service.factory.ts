@@ -3,7 +3,7 @@ import { APIConfig } from 'src/app/shared-modules/config/interfaces';
 import { HttpArticleService } from '../service/http-article.service';
 
 export class HttpArticleServiceFactory {
-  static makeHttpArticleServiceFactory(
+  static makeHttpArticleService(
     httpClient: HttpClient,
     apiConfig: APIConfig
   ): HttpArticleService {

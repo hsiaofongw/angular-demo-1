@@ -32,7 +32,7 @@ import { HttpArticleServiceFactory } from './factories/http-article-service.fact
     { provide: ArticleService, useClass: HttpArticleService },
     {
       provide: HttpArticleService,
-      useFactory: HttpArticleServiceFactory.makeHttpArticleServiceFactory,
+      useFactory: HttpArticleServiceFactory.makeHttpArticleService,
       deps: [HttpClient, API_CONFIG],
     },
     { provide: API_CONFIG, useValue: DEFAULT_API_CONFIG },
