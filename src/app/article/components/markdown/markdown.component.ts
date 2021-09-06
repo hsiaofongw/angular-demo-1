@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { MarkdownData } from '../../interface';
 
 @Component({
   selector: 'app-markdown',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarkdownComponent implements OnInit {
 
-  constructor() { }
+  markdownData?: MarkdownData;
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    window.console.log({ markdownData: this.activatedRoute.snapshot.data.markdownData });
   }
 
 }

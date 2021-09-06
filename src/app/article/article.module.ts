@@ -13,6 +13,8 @@ import { ArticleListComponent } from './components/article-list/article-list.com
 import { MarkdownComponent } from './components/markdown/markdown.component';
 import { API_CONFIG, DEFAULT_API_CONFIG } from './config';
 import { HttpArticleServiceFactory } from './factories/http-article-service.factory';
+import { RouterModule } from '@angular/router';
+import { MarkdownDataResolver } from './resolvers/markdown-data.resolver';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { HttpArticleServiceFactory } from './factories/http-article-service.fact
     LayoutModule,
     HttpClientModule,
     DateTimeHelperModule,
+    
   ],
   providers: [
     { provide: ArticleService, useClass: HttpArticleService },
