@@ -1,27 +1,9 @@
-# DependencyInjectionDemo
+# 探索子博客（前端）代码仓库
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
+## 简介
 
-## Development server
+我非常喜欢 Angular 这个框架，于是决定使用它配合 NestJS (一款风格类似 Angular 的后端框架) 来从头到尾重新开发一遍我的个人博客。这样做的意义有几点：1) 使得我能够将我的记录分享给可能需要的人，以及收集反馈，让错误被大家找出来；2）使得博客的代码仓库更加健康，因为 Angular 和 NestJS 都是很适合用于模块化开发的，所以用它们开发出来的东西的代码会比较好维护；3）将自己动手开发博客的编码过程分享给大家。
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+意义归根结底还是人为赋予的，使得「意义」这个词看起来往往不自然，有太多人工的成分。我相信人大多数情况下做事情是出于热爱，在此我也大方的承认我写这个东西纯粹是觉得好玩，虽然主要是 CRUD 为主，但是模块化的开发其实也是挺有趣的，实现一个完整的博客主要是在工程上存在一定工作量而理论上没有任何挑战可言，但是我还是想坚持去完成它。
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+在项目上线后我会及时在此更新项目架构图和代码目录结构解释说明。
