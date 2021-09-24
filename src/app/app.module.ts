@@ -9,6 +9,8 @@ import { LayoutModule } from './shared-modules/layout/layout.module';
 import { MetaDataModule } from './shared-modules/meta-data/meta-data.module';
 import { ArticleModule } from './article/article.module';
 import { LoggingModule } from './shared-modules/logging/logging.module';
+import { ClientUniqueMarkModule } from './shared-modules/client-unique-mark/client-unique-mark.module';
+import { SessionModule } from './shared-modules/session/session.module';
 // import { FriendModule } from './friend/friend.module';
 
 @NgModule({
@@ -21,6 +23,8 @@ import { LoggingModule } from './shared-modules/logging/logging.module';
     MetaDataModule,
     ArticleModule,
     LoggingModule,
+    ClientUniqueMarkModule,
+    SessionModule,
   ],
   providers: [Title],
   bootstrap: [AppComponent],
