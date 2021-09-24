@@ -12,7 +12,6 @@ import { UnixTimestampToStringPipe } from './pipes/unix-timestamp-to-string.pipe
 import { ArticleListComponent } from './components/article-list/article-list.component';
 import { MarkdownComponent } from './components/markdown/markdown.component';
 import { API_CONFIG, DEFAULT_API_CONFIG } from './config';
-import { HttpArticleServiceFactory } from './factories/http-article-service.factory';
 import { RouterModule } from '@angular/router';
 import { MarkdownDataResolver } from './resolvers/markdown-data.resolver';
 
@@ -33,11 +32,6 @@ import { MarkdownDataResolver } from './resolvers/markdown-data.resolver';
   ],
   providers: [
     { provide: ArticleService, useClass: HttpArticleService },
-    {
-      provide: HttpArticleService,
-      useFactory: HttpArticleServiceFactory.makeHttpArticleService,
-      deps: [HttpClient, API_CONFIG],
-    },
     { provide: API_CONFIG, useValue: DEFAULT_API_CONFIG },
   ],
   exports: [ArticleComponent, ArticleListComponent],

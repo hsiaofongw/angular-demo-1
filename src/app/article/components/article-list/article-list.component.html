@@ -3,9 +3,11 @@
 
   <div class="article-list-container">
     <ul class="article-list">
-      <li *ngFor="let article of articles">
-        <app-article [article]="article"></app-article>
-      </li>
+      <ng-container *ngFor="let page of _pages">
+        <li *ngFor="let article of page">
+          <app-article [article]="article"></app-article>
+        </li>
+      </ng-container>
     </ul>
   </div>
 

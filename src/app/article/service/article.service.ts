@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IArticleQueryResult } from '../interface';
+import { ArticleListQueryParameter, ArticleListQueryResult } from '../interface';
 
 @Injectable({ providedIn: 'root' })
 export abstract class ArticleService {
-  abstract getArticles(): Observable<IArticleQueryResult>;
+  abstract getArticles(parameter: ArticleListQueryParameter): Observable<ArticleListQueryResult>;
 }

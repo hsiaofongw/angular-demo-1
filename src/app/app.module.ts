@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './shared-modules/layout/layout.module';
 import { MetaDataModule } from './shared-modules/meta-data/meta-data.module';
 import { ArticleModule } from './article/article.module';
+import { LoggingModule } from './shared-modules/logging/logging.module';
 // import { FriendModule } from './friend/friend.module';
 
 @NgModule({
@@ -19,7 +20,7 @@ import { ArticleModule } from './article/article.module';
     LayoutModule,
     MetaDataModule,
     ArticleModule,
-    // FriendModule,
+    LoggingModule,
   ],
   providers: [Title],
   bootstrap: [AppComponent],
