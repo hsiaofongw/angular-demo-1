@@ -1,6 +1,9 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
+import { LoggerBuilder } from 'src/app/shared-modules/logging/services/logger-builder.service';
+import { Logger } from 'src/app/shared-modules/logging/services/logger.service';
 import { ScrollInfo } from 'src/app/ui/scroll-helper/interfaces';
+import { ArticleModule } from '../../article.module';
 import { IArticle } from '../../interface';
 import { Page } from '../../interface';
 import { ArticleService } from '../../service/article.service';
@@ -20,16 +23,24 @@ export class ArticleListComponent implements OnInit {
   /** 每一页的数据 */
   _pages: ArticlePages = [];
 
-  /** 当前已加载最大页，如值为 -1 则表示尚未加载任何内容 */
-  _currentMaxPageIndex = -1;
-
   /** 页长 */
   _pageSize = 20;
 
   /** 加载状态：是否正在加载内容 */
   _loading = false;
 
-  constructor(private articleListService: ArticleService) {}
+  /** 日志记录器 */
+  _logger!: Logger;
+
+  constructor(
+    private articleListService: ArticleService,
+    private loggerBuilder: LoggerBuilder
+  ) {
+    this._logger = this.loggerBuilder.makeLogger({
+      moduleId: ArticleModule.name,
+      classId: ArticleListComponent.name,
+    });
+  }
 
   ngOnInit(): void {
     this.scrollToTheTop();
@@ -44,14 +55,18 @@ export class ArticleListComponent implements OnInit {
 
     this._loading = true;
 
-    const offset = (this._currentMaxPageIndex + 1) * this._pageSize;
+    this._logger.info('拉取下一页');
+    this._logger.info({
+      pageSize: this._pageSize,
+      pagesCount: this._pages.length,
+    });
+
+    const offset = this._pages.length * this._pageSize;
     this.articleListService
       .getArticles({ offset: offset, limit: this._pageSize })
       .subscribe((queryResult) => {
-        this._pages = [...this._pages, queryResult.data];
-
         if (!!queryResult.data.length) {
-          this._currentMaxPageIndex = this._currentMaxPageIndex + 1;
+          this._pages = [...this._pages, queryResult.data];
         }
 
         this._loading = false;
