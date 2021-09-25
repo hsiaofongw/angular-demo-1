@@ -14,6 +14,7 @@ import { MarkdownComponent } from './components/markdown/markdown.component';
 import { API_CONFIG, DEFAULT_API_CONFIG } from './config';
 import { RouterModule } from '@angular/router';
 import { MarkdownDataResolver } from './resolvers/markdown-data.resolver';
+import { ScrollHelperModule } from '../ui/scroll-helper/scroll-helper.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { MarkdownDataResolver } from './resolvers/markdown-data.resolver';
     LayoutModule,
     HttpClientModule,
     DateTimeHelperModule,
-    
+    ScrollHelperModule,
   ],
   providers: [
     { provide: ArticleService, useClass: HttpArticleService },

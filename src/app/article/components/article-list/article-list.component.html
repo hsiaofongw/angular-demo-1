@@ -1,7 +1,13 @@
 <div class="article-list-outer-container">
-  <h1>文章列表</h1>
+  <h1>
+    文章列表<ng-container *ngIf="_loading">{{ "（正在加载）" }}</ng-container>
+  </h1>
 
-  <div class="article-list-container">
+  <div
+    class="article-list-container"
+    appScrollHelper
+    (onScrollBottom)="_handleScrollBottom($event)"
+  >
     <ul class="article-list">
       <ng-container *ngFor="let page of _pages">
         <li *ngFor="let article of page">
@@ -9,6 +15,8 @@
         </li>
       </ng-container>
     </ul>
+    <ng-container *ngIf="_loading">
+      <!-- <div>{{ '加载中' }}</div> -->
+    </ng-container>
   </div>
-
 </div>
