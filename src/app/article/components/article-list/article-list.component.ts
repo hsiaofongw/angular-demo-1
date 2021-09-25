@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { ScrollInfo } from 'src/app/ui/scroll-helper/interfaces';
 import { IArticle } from '../../interface';
@@ -13,6 +13,10 @@ type ArticlePages = Page<IArticle[]>;
   styleUrls: ['./article-list.component.scss'],
 })
 export class ArticleListComponent implements OnInit {
+  /** 列表容器 */
+  @ViewChild('listContainer', { read: ElementRef })
+  _listContainer?: ElementRef<HTMLElement>;
+
   /** 每一页的数据 */
   _pages: ArticlePages = [];
 
@@ -28,6 +32,7 @@ export class ArticleListComponent implements OnInit {
   constructor(private articleListService: ArticleService) {}
 
   ngOnInit(): void {
+    this.scrollToTheTop();
     this.fetchNextPage();
   }
 
@@ -39,23 +44,31 @@ export class ArticleListComponent implements OnInit {
 
     this._loading = true;
 
-    const offset = (this._currentMaxPageIndex+1) * this._pageSize;
+    const offset = (this._currentMaxPageIndex + 1) * this._pageSize;
     this.articleListService
       .getArticles({ offset: offset, limit: this._pageSize })
-      .subscribe(queryResult => {
+      .subscribe((queryResult) => {
         this._pages = [...this._pages, queryResult.data];
 
         if (!!queryResult.data.length) {
           this._currentMaxPageIndex = this._currentMaxPageIndex + 1;
         }
-        
+
         this._loading = false;
       });
   }
 
   /** 响应视图滚动到底部事件 */
   _handleScrollBottom(scrollInfo: ScrollInfo): void {
-    window.console.log({scrollInfo});
+    window.console.log({ scrollInfo });
     this.fetchNextPage();
+  }
+
+  scrollToTheTop(): void {
+    if (!this._listContainer) {
+      return;
+    }
+
+    this._listContainer.nativeElement.scrollTo({ top: 0 });
   }
 }

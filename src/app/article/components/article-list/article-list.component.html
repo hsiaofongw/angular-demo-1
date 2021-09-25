@@ -7,6 +7,7 @@
     class="article-list-container"
     appScrollHelper
     (onScrollBottom)="_handleScrollBottom($event)"
+    #listContainer
   >
     <ul class="article-list">
       <ng-container *ngFor="let page of _pages">
