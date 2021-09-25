@@ -31,7 +31,7 @@ export class Logger {
       content: content,
     };
 
-    class UnLeveledLog {
+    class UnLeveledLog implements IUnLeveledLog {
       logAs(level: StandardLogLevel): void {
         const fullLog: StandardLog = { ...unLeveledLog, level };
         recorder.next(fullLog);
@@ -47,17 +47,17 @@ export class Logger {
   }
 
   /** 记录 error 级的日志 */
-  public error(content: string): void {
+  public error<T extends Serializable>(content: T): void {
     this._makeUnLeveledLog(content).logAs('error');
   }
 
   /** 记录 warning 级的日志 */
-  public warning(content: string): void {
+  public warning<T extends Serializable>(content: T): void {
     this._makeUnLeveledLog(content).logAs('warning');
   }
 
   /** 记录 debug 级的日志 */
-  public debug(content: string): void {
+  public debug<T extends Serializable>(content: T): void {
     this._makeUnLeveledLog(content).logAs('debug');
   }
 }
