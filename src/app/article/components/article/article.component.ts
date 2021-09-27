@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { IArticle } from '../../interface';
 
 @Component({
@@ -8,10 +9,13 @@ import { IArticle } from '../../interface';
 })
 export class ArticleComponent {
 
+  constructor(private router: Router) {}
+
   @Input()
   article?: IArticle;
 
   handleClick(article: IArticle) {
-    // window.open(article.url, '_blank');
+    const articleId = article.file;
+    this.router.navigate(['articles', articleId]);
   }
 }

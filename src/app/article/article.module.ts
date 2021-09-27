@@ -15,6 +15,7 @@ import { API_CONFIG, DEFAULT_API_CONFIG } from './config';
 import { RouterModule } from '@angular/router';
 import { MarkdownDataResolver } from './resolvers/markdown-data.resolver';
 import { ScrollHelperModule } from '../ui/scroll-helper/scroll-helper.module';
+import { ArticlePreviewComponent } from './components/article-preview/article-preview.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ScrollHelperModule } from '../ui/scroll-helper/scroll-helper.module';
     UnixTimestampToStringPipe,
     ArticleListComponent,
     MarkdownComponent,
+    ArticlePreviewComponent,
   ],
   imports: [
     CommonModule,

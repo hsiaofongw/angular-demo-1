@@ -79,6 +79,7 @@ export class ArticleListComponent implements OnInit {
     this.fetchNextPage();
   }
 
+  /** 滑动到顶部 */
   scrollToTheTop(): void {
     if (!this._listContainer) {
       return;
